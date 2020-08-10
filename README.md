@@ -93,7 +93,14 @@ Then, we employ the recordlinkage.Compare class to measure the similarity betwee
 <em>Figure 5: Pair plot of feature vectors.</em>
 
 ## Building Model
-We split the dataset into 20 percent as validation dataset, and we standardize features and train our models on 80 percent of the dataset. In this section, we choose decision tree and K-means methods to fit model. Decision trees is supervised learning and this method is to segment the feature space into a number of smaller, simpler, non-overlapping regions and K-means is unsupervised learning and aims to find a set number clusters. Then, we try to use deep learning technique to outperform the result. The result of validation dataset shows in Table 2. It shows that the accuracy rate for deep learning model is close the decision tree model and precision is 0.0411 which is also lesser than the decision tree model but higher Kmeans. Compared with the recall, the deep learning model is the highest having 0.9495.
+We split the dataset into 20 percent as validation dataset, and we standardize features and train our models on 80 percent of the dataset. In this section, we choose decision tree and K-means methods to fit model. Decision trees is supervised learning and this method is to segment the feature space into a number of smaller, simpler, non-overlapping regions and K-means is unsupervised learning and aims to find a set number clusters. Then, we try to use deep learning technique to outperform the result (the model architecture shows in Figure 6).
+
+<img src="/image/deep_learning.JPG" width="300"/> 
+
+<em>Figure 6: Simple Neural network architecture.</em>
+
+### Training Data
+The result of validation dataset shows in Table 2. It shows that the accuracy rate for deep learning model is close the decision tree model and precision is 0.0411 which is also lesser than the decision tree model but higher Kmeans. Compared with the recall, the deep learning model is the highest having 0.9495.
 
 | Method | Accuracy | Precision | Avg. Precision | Recall | F1 score |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
@@ -101,6 +108,16 @@ We split the dataset into 20 percent as validation dataset, and we standardize f
 | K-means (K=2) | 0.8012 | 0.0077 | NA | 0.6364 | 0.0154 |
 | Deep Learning | 0.9458 | 0.0411 | 0.3554 | 0.9495 | 0.0788 |
 
-We can check the history of of precision, recall, accuracy and loss plot for training and validation datasets display in Figure 6. That indicate that our deep learning model is enough for convergence. We employ Youden (1950) technique to find optimal threshold for deep learning model is 0.482405. More details about precision recall curve and ROC curve show in Figure 10. The ROC curve indicates the distribution of positive and negative class. It shows that two distributions are overlap and AUC is 0.974 which means there is 97.4% chance that model will be able to distinguish between positive class and negative class.
+<em>Table 2: The performance of models classifiers on the blocking dataset. (optimal threshold for deep learning is 0.482405)</em>
+
+We can check the history of of precision, recall, accuracy and loss plot for training and validation datasets display in Figure 7. That indicate that our deep learning model is enough for convergence. We employ [Youden (1950)] technique to find optimal threshold for deep learning model is 0.482405. More details about precision recall curve and ROC curve show in Figure 10. The ROC curve indicates the distribution of positive and negative class. It shows that two distributions are overlap and AUC is 0.974 which means there is 97.4% chance that model will be able to distinguish between positive class and negative class.
+
+<img src="/image/deep_learning.JPG" width="300"/> 
+
+<em>Figure 6: Simple Neural network architecture.</em>
+
+<img src="/image/deep_learning.JPG" width="300"/> 
+
+<em>Figure 7: Simple Neural network architecture.</em>
 
 ## Conclusion
