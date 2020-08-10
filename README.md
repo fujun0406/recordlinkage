@@ -100,24 +100,25 @@ We split the dataset into 20 percent as validation dataset, and we standardize f
 <em>Figure 6: Simple Neural network architecture.</em>
 
 ### Training Data
-The result of validation dataset shows in Table 2. It shows that the accuracy rate for deep learning model is close the decision tree model and precision is 0.0411 which is also lesser than the decision tree model but higher Kmeans. Compared with the recall, the deep learning model is the highest having 0.9495.
+The result of validation dataset shows in Table 2. It shows that the accuracy rate for deep learning model is close the decision trees model and precision is 0.0332 which is also lesser than the decision tree model but higher Kmeans. Compared with the recall, the deep learning model is the highest having 0.9495.
 
 | Method | Accuracy | Precision | Avg. Precision | Recall | F1 score |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 | Decision Tree | 0.9976 | 0.5098 | NA | 0.2626 | 0.3467 |
 | K-means (K=2) | 0.8012 | 0.0077 | NA | 0.6364 | 0.0154 |
-| Deep Learning | 0.9458 | 0.0411 | 0.3554 | 0.9495 | 0.0788 |
+| Deep Learning | 0.9325 | 0.0332 | 0.3554 | 0.9495 | 0.064 |
 
-<em>Table 2: The performance of models classifiers on the blocking dataset. (optimal threshold for deep learning is 0.482405)</em>
+<em>Table 2: The performance of models classifiers on the blocking dataset. (optimal threshold for deep learning is 0.448849)</em>
 
-We can check the history of of precision, recall, accuracy and loss plot for training and validation datasets display in Figure 7. That indicate that our deep learning model is enough for convergence. We employ [Youden (1950)] technique to find optimal threshold for deep learning model is 0.482405. More details about precision recall curve and ROC curve show in Figure 10. The ROC curve indicates the distribution of positive and negative class. It shows that two distributions are overlap and AUC is 0.974 which means there is 97.4% chance that model will be able to distinguish between positive class and negative class.
+We can check the history of of precision, recall, accuracy and loss plot for training and validation datasets display in Figure 7. That indicate that our deep learning model is enough for convergence. We employ [Youden (1950)] technique to find optimal threshold for deep learning model is 0.448849. More details about precision recall curve and ROC curve show in Figure 8. The ROC curve indicates the distribution of positive and negative class. It shows that two distributions are overlap and AUC is 0.972 which means there is 97.2% chance that model will be able to distinguish between positive class and negative class.
 
-<img src="/image/deep_learning.JPG" width="300"/> 
+<img src="/image/precision_recall.png" width="300"/> 
+<img src="/image/acc_loss.png" width="300"/> 
 
-<em>Figure 6: Simple Neural network architecture.</em>
+<em>Figure 7: : Checking training history.</em>
 
-<img src="/image/deep_learning.JPG" width="300"/> 
+<img src="/image/precicsion_call_plot.png" width="300"/> <img src="/image/deep_learning.JPG" width="300"/> 
 
-<em>Figure 7: Simple Neural network architecture.</em>
+<em>Figure 8: The precision recall curve and ROC curve.</em>
 
 ## Conclusion
