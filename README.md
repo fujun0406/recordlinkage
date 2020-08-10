@@ -8,6 +8,8 @@
     * [Preprocessing](#preprocessing)
     * [Feature Vectors](#feature-vectors)
 * [Building Model](#building-model)
+    * [Training Data](#training-data)
+    * [Testing Data](#testing-data)
 * [Conclusion](#conclusion)
 
 ## Overview
