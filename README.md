@@ -81,6 +81,26 @@ All pairs records is 2880444 (= 1113 × 2588) since the number of record in Amaz
 <img src="/image/is_duplicate.jpg" width="500"/> 
 
 <em>Figure 3: The distribution of blocking samples.</em>
+
+Then, we employ the recordlinkage.Compare class to measure the similarity between both datasets. The similarity distribution of negative and positive records in Figure 4. There are a lot of missing values in manufacturer causing the most of feature vectors of manufacturer are 0. We can see that the pairwise relationships for the dataset in Figure 5 and there is no specific relationship between each variables. 
+
+<img src="/image/similarity_negative.png" width="410"/> <img src="/image/similarity_positive.png" width="410"/> 
+
+<em>Figure 4: The similarity distribution of negative and positive records.</em>
+
+<img src="/image/pairplot.png" width="500"/> 
+
+<em>Figure 5: Pair plot of feature vectors.</em>
+
 ## Building Model
+We split the dataset into 20 percent as validation dataset, and we standardize features and train our models on 80 percent of the dataset. In this section, we choose decision tree and K-means methods to fit model. Decision trees is supervised learning and this method is to segment the feature space into a number of smaller, simpler, non-overlapping regions and K-means is unsupervised learning and aims to find a set number clusters. Then, we try to use deep learning technique to outperform the result. The result of validation dataset shows in Table 2. It shows that the accuracy rate for deep learning model is close the decision tree model and precision is 0.0411 which is also lesser than the decision tree model but higher Kmeans. Compared with the recall, the deep learning model is the highest having 0.9495.
+
+| Method | Accuracy | Precision | Avg. Precision | Recall | F1 score |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| Decision Tree | 0.9976 | 0.5098 | NA | 0.2626 | 0.3467 |
+| K-means (K=2) | 0.8012 | 0.0077 | NA | 0.6364 | 0.0154 |
+| Deep Learning | 0.9458 | 0.0411 | 0.3554 | 0.9495 | 0.0788 |
+
+We can check the history of of precision, recall, accuracy and loss plot for training and validation datasets display in Figure 6. That indicate that our deep learning model is enough for convergence. We employ Youden (1950) technique to find optimal threshold for deep learning model is 0.482405. More details about precision recall curve and ROC curve show in Figure 10. The ROC curve indicates the distribution of positive and negative class. It shows that two distributions are overlap and AUC is 0.974 which means there is 97.4% chance that model will be able to distinguish between positive class and negative class.
 
 ## Conclusion
