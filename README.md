@@ -6,6 +6,7 @@
 * [Exploratory Data Analysis](#exploratory-data-analysis)
     * [Datasets](#datasets)
     * [Preprocessing](#preprocessing)
+    * [Feature Vectors](#feature-vectors)
 * [Building Model](#building-model)
 * [Conclusion](#conclusion)
 
@@ -72,7 +73,14 @@ Cleaning and removing unwanted texts, whitespace or brackets may increase your r
 Blocking is a linking method which can enhance computation efficiency. This technique in some way remove all record pairs that are not good candidates for linking ([Newcombe et al.1959](https://science.sciencemag.org/content/130/3381/954)). In this project, we employ sorted neighbourhood blocking algorithm that is not sensitive to misspell issue.
 
 4. Comparing Information:
+After reducing complexity of datasets, we use the class recordlinkage.Compare() in Python compute the similarity between two strings. In this project, we use Jaro-Winkler method to compare string and Gaussian algorithm to comapre the numerical information. Then, we can get feature vectors.
 
+### Feature Vectors
+All pairs records is 2880444 (= 1113 × 2588) since the number of record in Amazon dataset is 1113 and 2588 in Goggle dataset. There are 2879378 negative samples and 1066 positive samples. By using sorted neighbourhood blocking algorithm, we can create blocking record pairs and utilize title as sorting key. It shows that there are 203087 blocking record pairs having 202564 negatives and 523 positives (Figure 3) that is unbalanced dataset. 
+
+<img src="/image/is_duplicate.jpg" width="500"/> 
+
+<em>Figure 3: The distribution of blocking samples.</em>
 ## Building Model
 
 ## Conclusion
