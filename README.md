@@ -110,15 +110,42 @@ The result of validation dataset shows in Table 2. It shows that the accuracy ra
 
 <em>Table 2: The performance of models classifiers on the blocking dataset. (optimal threshold for deep learning is 0.448849)</em>
 
-We can check the history of of precision, recall, accuracy and loss plot for training and validation datasets display in Figure 7. That indicate that our deep learning model is enough for convergence. We employ [Youden (1950)] technique to find optimal threshold for deep learning model is 0.448849. More details about precision recall curve and ROC curve show in Figure 8. The ROC curve indicates the distribution of positive and negative class. It shows that two distributions are overlap and AUC is 0.972 which means there is 97.2% chance that model will be able to distinguish between positive class and negative class.
+We can check the history of of precision, recall, accuracy and loss plot for training and validation datasets display in Figure 7. That indicate that our deep learning model is enough for convergence. We employ [Youden (1950)](https://pubmed.ncbi.nlm.nih.gov/15405679/) technique to find optimal threshold for deep learning model is 0.448849. More details about precision recall curve and ROC curve show in Figure 8. The ROC curve indicates the distribution of positive and negative class. It shows that two distributions are overlap and AUC is 0.972 which means there is 97.2% chance that model will be able to distinguish between positive class and negative class.
 
-<img src="/image/precision_recall.png" width="800"/> 
-<img src="/image/acc_loss.png" width="800"/> 
+<img src="/image/precision_recall.png" width="600"/> 
+<img src="/image/acc_loss.png" width="600"/> 
 
 <em>Figure 7: : Checking training history.</em>
 
-<img src="/image/precicsion_call_plot.png" width="400"/> <img src="/image/roc.png" width="400"/> 
+<img src="/image/precicsion_call_plot.png" width="400"/> <img src="/image/roc.png" width="300"/> 
 
 <em>Figure 8: The precision recall curve and ROC curve.</em>
 
+### Testing Data
+After building up model, we employ the deep learning model on testing dataset. The testing datasets include the same attributes as training dataset. The all pairs of testing dataset is 159500 (= 250 × 638) since the number of records in Amazon and Goggle testing dataset are 250 and 638 respectively. By using recordlinkage.Compare class, we canmeasure the similarity for all pairs records. The result show in Table 3. The precision recall curve and ROC curve show in Figure 9 and it shows that the performance of data matching is acceptable.
+
+| | Accuracy | Precision | Avg. Precision | Recall | F1 score |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| Testing dataset | 0.8267 | 0.0077 | 0.3768 | 0.9103 | 0.0152 |
+
+<em>Figure 3: The performance of testing dataset. (optimal threshold for deep learning is 0.072108)</em>
+
+<img src="/image/testing_AP.png" width="400"/> <img src="/image/testing_roc.png" width="300"/> 
+
+<em>Figure 8: The precision recall curve and ROC curve.</em>
+
+We can get a confusion matrix in Table 4 and Figure 9 and it show that the stability of identifying positive and negative records are quite sensitive.
+
+| | Predicted Negative | Predicted Positive | 
+| ----------- | ----------- | ----------- | 
+| Actual Negative | 131644 | 27622 | 
+| Actual Positive | 21 | 213 | 
+
+<em>Table 4: The confusion matrix for testing dataset.</em>
+
+<img src="/image/testing_cm.png" width="400"/>
+
+<em>Figure 9: The normalized confusion matrix. (each elements are divided the sum of row which is the actual observations)</em>
+
 ## Conclusion
+To conclude despite the fact that we only use a simple deep learning model in this report, it still provides many information about linking records between Amazon and Google dataset. Compared with K-means and decision tree model, deep learning model gives an outperformed result. But we only try a simple architecture of neural network. As far as for future research, we can try to explore different architectures of deep learning model or other machine learning techniques on datasets. [Christen (2012)](https://ieeexplore.ieee.org/document/5887335) indicates the importance of indexing techniques. We can also explore difference indexing techniques to improve the performance of model.
