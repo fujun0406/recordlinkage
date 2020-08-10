@@ -112,12 +112,12 @@ The result of validation dataset shows in Table 2. It shows that the accuracy ra
 
 We can check the history of of precision, recall, accuracy and loss plot for training and validation datasets display in Figure 7. That indicate that our deep learning model is enough for convergence. We employ [Youden (1950)] technique to find optimal threshold for deep learning model is 0.448849. More details about precision recall curve and ROC curve show in Figure 8. The ROC curve indicates the distribution of positive and negative class. It shows that two distributions are overlap and AUC is 0.972 which means there is 97.2% chance that model will be able to distinguish between positive class and negative class.
 
-<img src="/image/precision_recall.png" width="300"/> 
-<img src="/image/acc_loss.png" width="300"/> 
+<img src="/image/precision_recall.png" width="800"/> 
+<img src="/image/acc_loss.png" width="800"/> 
 
 <em>Figure 7: : Checking training history.</em>
 
-<img src="/image/precicsion_call_plot.png" width="300"/> <img src="/image/deep_learning.JPG" width="300"/> 
+<img src="/image/precicsion_call_plot.png" width="400"/> <img src="/image/roc.png" width="400"/> 
 
 <em>Figure 8: The precision recall curve and ROC curve.</em>
 
