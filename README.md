@@ -3,9 +3,9 @@
 ## Contents
 * [Overview](#overview)
 * [Background](#background)
+* [Exploratory Data Analysis](#exploratory-data-analysis)
     * [Datasets](#datasets)
     * [Preprocessing](#preprocessing)
-* [Exploratory Data Analysis](#exploratory-data-analysis)
 * [Building Model](#building-model)
 * [Conclusion](#conclusion)
 
@@ -65,11 +65,13 @@ In practice, many datasets contain noisy, inconsistent and missing data which ma
 1. Missing Values:
 Records are incomplete that means some information is available. In record linkage, it is common to left the missing values instead of using the imputation technique ([Christen 2012](https://www.springer.com/gp/book/9783642311635)). Missing values also play an important role in classification method. In that way, we will fill in space into every missing values in both of datasets.
 
-2.
+2. Cleaning Dataset:
+Cleaning and removing unwanted texts, whitespace or brackets may increase your record linkage accuracy. In this step, we will clean string or numerical information for both dataset excluded the column of id. This process involves the removal of special characters, convert upper characters to lower characters and remove stopwords such as ”the”, ”on”, ”is” etc. We also remove morphological affixes from words and leave only the word stem. By using this way, it will reduce of record complexity and help to detect the matching. Furthermore, we will change data type of price in Google to float and change the column name to be consistent.
 
+3. Blocking: 
+Blocking is a linking method which can enhance computation efficiency. This technique in some way remove all record pairs that are not good candidates for linking ([Newcombe et al.1959](https://science.sciencemag.org/content/130/3381/954)). In this project, we employ sorted neighbourhood blocking algorithm that is not sensitive to misspell issue.
 
-
-
+4. Comparing Information:
 
 ## Building Model
 
